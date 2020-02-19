@@ -1,0 +1,81 @@
+#calculator {
+	width: 500px;
+	background-color:#ac452d;
+	padding: 1em;
+	border-radius: 3px;
+}
+.screen  {
+	width: 100%;
+}
+#example {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.3rem 1rem;
+	background-color: #fff;
+}
+input[name='answer'] {
+	width: 100%;
+	font-size: 2rem;
+	height: 1.5em;
+	padding: 0.3rem 1rem;
+	border: 0;
+	box-sizing: border-box;
+}
+#buttons {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 5px;
+	margin-top: 3%;
+}
+.btn {
+	font-size: 2rem;
+	padding: 1rem;
+	border: none;
+	border-radius: 3px;
+	transition: .1s;
+}
+
+
+#btn-number {
+	grid-row-start: 2;
+	grid-row-end: 6;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 5px;
+}
+.btn-number:hover, .btn-number-zero:hover {
+	background-color: #c6d7ee;;
+}
+.btn-mathSymbols {
+	background-color: #56ff69;
+}
+.btn-mathSymbols:hover {
+	background-color: #4fa85a;;
+}
+.btn-eqalsSign {
+	grid-row-start: 5;
+	grid-column-start: 4;
+	grid-column-start: 6;
+}
+.btn-answer {
+	grid-row: span 2;
+}
+.btn-number, .btn-number-zero {
+	background-color: #f1f3f4;
+}
+.btn-number-zero {
+	grid-column-start: 0;
+	grid-row-start: 4;
+	grid-column: span 2;
+}
+.btn-equals {
+	grid-row-start: 4;
+	grid-row-end: 6;
+	grid-column-start: 5;
+	background-color: #006cff;
+}
+.btn-equals:hover {
+	background-color: #013a8a;
+}
