@@ -24,6 +24,7 @@ assignmentOfButtons(btnEqualsSign, 'btn-equals', buttons);
 function assignmentOfButtons(sign, classBtn, sectionBtn) {
 	let signElement = document.createElement('button'); //добавляем тег button
 	signElement.classList.add('btn', classBtn);           //добавляем классы для тега 
+	signElement.id = "btn-" + sign;
 	signElement.textContent = sign;						//добавляем содержание тега
 	sectionBtn.appendChild(signElement);					//добавляем этот тег в section
 }
@@ -40,6 +41,7 @@ let numberBrackets = -1;
 let startBrackets = [];
 
 function clickButton(e) {
+	console.log(e);
 	if (screen.value === '') {
 		if (e.target.classList.contains('btn-number')) {
 			if (e.target.textContent === '.') {
@@ -176,6 +178,7 @@ function clickButton(e) {
 let example = document.getElementById('example');
 
 function toCount() {
+	console.log(k);
 	let sourceExample = k;
 	example.textContent = sourceExample.join(' ');
 	while (numberBrackets >= 0) {
@@ -251,3 +254,23 @@ function loading() {
 }
 
 window.addEventListener('load', loading, false);
+
+document.addEventListener('keydown', function(e) {
+	console.log(e.key);
+	e.preventDefault();
+	if (e.key === 'Enter') {
+		toCount();
+	}
+	if ((e.key >= '0') && (e.key <= '9') || (e.key === '.') || (e.key === '+') || (e.key === '-') || (e.key === ')') || (e.key === '(')) {
+		document.getElementById("btn-" + e.key).click();
+	}
+	if (e.key === '/') {
+		document.getElementById("btn-÷").click();
+	}
+	if (e.key === '*') {
+		document.getElementById("btn-×").click();
+	}
+	if (e.key === 'Backspace') {
+		document.getElementById("btn-←").click();
+	}
+}, false);
