@@ -243,3 +243,11 @@ function count(ex) {
 	}
 	return ex;
 }
+
+function loading() {
+	let numberInput;
+	numberInput = document.getElementById('answer');
+	numberInput.focus();
+}
+
+window.addEventListener('load', loading, false);
